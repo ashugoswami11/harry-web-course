@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms-first time making forms</title>
+</head>
+
+<body>
+    <h1>From:- Fill your details</h1>
+    <form action= "/submit" method="post">
+        <div>
+            <label for="name"> Enter you name: </label>
+            <input type="text" id="name" name="name" placeholder="enter your name" required>
+        </div>
+
+        <div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">female</label>
+        </div>
+
+        <div>
+            <label for="checkbox">Are you an adult</label>
+            <input type="checkbox" id="checkbox" name="adult" value="yes">
+        </div>
+
+        <div>
+            <label for="comment">Write a comment</label>
+            <br>
+            <textarea id="comment" rows="5" cols="30">enter your text here</textarea>
+        </div>
+            <label for="select">select your city</label>
+            <select id="select" name="selectcity">
+                <option value = "delhi">delhi</option>    
+                <option value = "mumbai">mumbai</option>    
+                <option value = "banglore">banglore</option>    
+                </select>        
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Electrical Connection Application</title>
 </head>
 <body>
-    
+    <h2>Electrical Connection Application Form</h2>
+    <form onsubmit="return validateForm()">
+        <!-- Connection Type -->
+        <label>Connection Type:</label><br>
+        <input type="checkbox" name="connection" value="Permanent"> Permanent<br>
+        <input type="checkbox" name="connection" value="Temporary"> Temporary<br>
+        <input type="checkbox" name="connection" value="Post-paid"> Post-paid<br><br>
+        
+        <!-- Housing Type -->
+        <label>Housing Type:</label><br>
+        <input type="checkbox" name="housing" value="Govt."> Govt. houses<br>
+        <input type="checkbox" name="housing" value="Pvt."> Pvt. houses<br>
+        <input type="checkbox" name="housing" value="Others"> Others<br><br>
+        
+        <!-- Personal Details -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="fatherName">Father's Name:</label><br>
+        <input type="text" id="fatherName" name="fatherName"><br><br>
+        
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+        
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value.trim();
+            const fatherName = document.getElementById("fatherName").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const email = document.getElementById("email").value.trim();
+            
+            // Check for empty fields
+            if (!name || !fatherName || !address || !email) {
+                alert("All fields must be filled out!");
+                return false;
+            }
+
+            // Check for valid email format
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address!");
+                return false;
+            }
+
+            
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
 </body>
 </html>

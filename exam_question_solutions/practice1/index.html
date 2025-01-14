@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>profit and loss calculator</title>
+</head>
+
+<body>
+    <h2>profit and loss calculator</h2>
+    <button onclick="pandlcalculator()">calculate</button>
+
+    <script>
+        function pandlcalculator() {
+            //prompt the user for the input
+            const costprice = parseFloat(prompt("enter the price of the book"));
+            const sellingprice = parseFloat(prompt("enter the selling price of the book"));
+
+            //check for the invalid inputs
+            if (isNaN(costprice) || isNaN(sellingprice) || costprice <= 0 || sellingprice <= 0) {
+                alert("input is invalid please check it again")
+                return;
+            }
+
+            if (sellingprice > costprice) {
+                const profit = sellingprice - costprice;
+                const profitpercentage = (profit / costprice) * 100;
+                alert("the profit you made is " + profit.toFixed(2) + "\n the profit percentage is: " + profitpercentage.toFixed(2));
+            }
+            else if (costprice > sellingprice) {
+                const loss = costprice - sellingprice;
+                const lossPercentage = (loss/costprice)*100;
+                alert("the cost you made is " + loss.toFixed(2) + "\n the loss percentage is: " + lossPercentage.toFixed(2));
+            }
+            else{
+                alert("no profit no loss you sell the book on the same price you purchased it");
+            }
+
+        }
+    </script>
+</body>
+</html>

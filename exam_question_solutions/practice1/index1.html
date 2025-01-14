@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit and Loss Calculator</title>
+</head>
+
+<body>
+    <h2>Profit and Loss Calculator</h2>
+    <button onclick="calculateProfitOrLoss()">Calculate</button>
+
+    <script>
+        function calculateProfitOrLoss() {
+            // Prompt the user for input
+            const costPrice = parseFloat(prompt("Enter the Cost Price of the book: "));
+            const sellingPrice = parseFloat(prompt("Enter the Selling Price of the book: "));
+
+            // Check if the inputs are valid numbers
+            if (isNaN(costPrice) || isNaN(sellingPrice) || costPrice <= 0) {
+                alert("Please enter valid numbers for cost price and selling price.");
+                return;
+            }
+
+            // Calculate the profit or loss
+            if (sellingPrice > costPrice) {
+                const profit = sellingPrice - costPrice;
+                const profitPercentage = (profit / costPrice) * 100;
+                alert(`You made a profit of ${profit.toFixed(2)}.\nProfit Percentage: ${profitPercentage.toFixed(2)}%`);
+            } else if (sellingPrice < costPrice) {
+                const loss = costPrice - sellingPrice;
+                const lossPercentage = (loss / costPrice) * 100;
+                alert(`You incurred a loss of ${loss.toFixed(2)}.\nLoss Percentage: ${lossPercentage.toFixed(2)}%`);
+            } else {
+                alert("No profit or loss. The cost price and selling price are the same.");
+            }
+        }
+    </script>
+</body>
+
+</html>

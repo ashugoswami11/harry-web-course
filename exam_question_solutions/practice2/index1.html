@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>wishing user at different hours</title>
+</head>
+
+<body>
+    <h2>time based greeting</h2>
+    <button onclick="greetinguser()">click to see greetings</button>
+    <script>
+        function greetinguser() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            if (hour >= 5 && hour < 12) {
+                alert("good morning user!")
+            }
+            else if (hour >= 12 && hour < 16) {
+                alert("good afternoon user!")
+            }
+            else if (hour >= 16 && hour < 20) {
+                alert("good evening user!")
+            }
+            else {
+                alert("good night user!")
+            }
+        }
+    </script>
+</body>
+
+</html>

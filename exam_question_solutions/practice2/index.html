@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>course registration web page</title>
+</head>
+
+<body>
+    <h2>fill the details below</h2>
+    <form>
+        <label><b>Select the Term<b></label><br>
+        summer<input type="checkbox" name="term" value="summer">
+        winter<input type="checkbox" name="term" value="winter"><br>
+
+        <br>
+        <label for="dob">Date of Birth: </label>
+        <select name="dob" id="dob">
+            <option value = "">select</option>
+            <option value = "2000">2000</option>
+            <option value = "2001">2001</option>
+            <option value = "2002">2002</option>
+            <option value = "2003">2003</option>
+            <option value = "2004">2004</option>
+            <option value = "2005">2005</option>
+        </select><br>
+
+        <br>
+        <label for="firstname">firstname: </label>
+        <input type="text" name="firstname" id="firstname" placeholder="enter your first name"><br>
+
+        <br>
+        <label for="lastname">Lastname:</label>
+        <input type="text" name="lastname" id="lastname" placeholder="enter your last name"><br>
+
+        <br>
+        <label for="nationality">Nationality: </label>
+        <select name="nationality" id="nationality">
+            <option value="">select</option>
+            <option value="india">india</option>
+            <option value="united kingdom">united kingdom</option>
+            <option value="australia">australia</option>
+            <option value="sudan">sudan</option>
+            <option value="mongolia">mongolia</option>
+            <option value="japan">japan</option>
+        </select><br>
+
+        <br>
+        <div>
+            <label for="courseid">Course ID: </label>
+            <select name="courseid" id="courseid">
+                <option value="">select</option>
+                <option value="mcsl-16">mcsl-016</option>
+                <option value="bcs-012">bcs-012</option>
+                <option value="bcsl-013">bcsl-013</option>
+                <option value="bcsl-057">bcsl-057</option>
+            </select>
+
+            <label for="coursename">Course Name: </label>
+            <select name="coursename" id="coursename">
+                <option value="">select</option>
+                <option value="web programming lab">web programming lab</option>
+                <option value="Maths">Maths</option>
+                <option value="computer lab">computer lab</option>
+                <option value="web coding">web coding</option>
+            </select>
+
+            <label for="credit">Credit : </label>
+            <select name="credit" id="credit">
+                <option value="">select</option>
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div><br>
+
+        <br>
+        <button type="button" onclick="validateform()">Submit</button>
+    </form>
+
+    <script>
+        function validateform(){
+            const dob = document.getElementById("dob").value;
+            const firstname = document.getElementById("firstname").value.trim();
+            const lastname = document.getElementById("lastname").value.trim();
+            const courseid = document.getElementById("courseid").value;
+            const coursename = document.getElementById("coursename").value;
+            const credit = document.getElementById("credit").value;
+
+            if(!dob || !firstname || !lastname || !courseid || !coursename || !credit){
+                alert("please fill the details !")
+                return;
+            }
+
+            else{
+                alert("form submit successfully !")
+            }
+        }
+    </script>
+</body>
+
+</html>

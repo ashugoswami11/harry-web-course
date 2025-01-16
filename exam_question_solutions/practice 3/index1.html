@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input of name</title>
+</head>
+
+<body>
+    <h3>enter this button to input and change sequence of your name</h3>
+    <button type="button" onclick="changesequence()">change sequence</button>
+
+    <script>
+        function changesequence(){
+            const fname = prompt(alert("enter your first name"));
+            const mname = prompt(alert("enter your middle name"));
+            const lname = prompt(alert("enter your last name"));
+
+            //this function will check if any field left empty 
+            if(!fname || !mname || !lname){
+                alert("please fill the names");
+            }
+
+            alert("changed sequence of your name is: " + lname + " " + fname + " " + mname); 
+
+
+        }
+    </script>
+
+</body>

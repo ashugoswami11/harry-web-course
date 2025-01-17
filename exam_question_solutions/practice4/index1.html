@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charser="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>searching a word in the text</title>
+</head>
+
+<body>
+    <h2>search for a word in the text</h2>
+
+    <input type="text" name="text" id="text" placeholder="enter your text here "><br>
+    <br>
+    <input type="text" name="word" id="word" placeholder="enter your word here "><br>
+    <br>
+
+    <button type="button" onclick="checkword()">Check</button>
+
+
+    <script>
+        function checkword() {
+            const text = document.getElementById("text").value;
+            const word = document.getElementById("word").value;
+
+            if (text.includes(word)) {
+                alert("yes word is found in the text");
+            }
+            else {
+                alert("no word is not in the text");
+            }
+
+        }        
+    </script>
+</body>

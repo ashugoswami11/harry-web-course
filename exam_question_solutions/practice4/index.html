@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, intial-scale=1.0">
+    <title>online application for electrical connection</title>
+</head>
+
+<body>
+    <h2>Form for online electrical connection</h2>
+
+    <label><b>select the connection type<b></label><br><br>
+    Permanent:<input type="checkbox" name="connection" value="permanent">
+    Temporary:<input type="checkbox" name="connection" value="temporary"><br>
+    <br>
+
+    <label><b>select the house type<b></label><br>
+    <br>
+    Government: <input type="checkbox" name="house" value="government">
+    Private: <input type="checkbox" name="house" value="private"><br>
+    <br>
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="enter your name"><br>
+
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" placeholder="enter your email"><br>
+
+    <br>
+    <button type="button" onclick="validationcheck()">Submit</button>
+
+    <script>
+        function validationcheck(){
+            const Name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            if(!name || !email){
+                alert("please fill all fields !");
+            }
+
+            const emailformat= /^[a-zA-Z0-9.-_%+]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/;
+            if(emailformat.test(email)){
+                alert("email address is in the correct form");
+            } else {
+                alert("invalid email. Please enter a valid email address");
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
